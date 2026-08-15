@@ -157,14 +157,18 @@
       border-radius: 30px;
       animation: pulse 1.2s ease-in-out infinite;
       margin-bottom: 1rem;
-      background: var(--bronze-gradient);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #0c0c0c;
+      background: #1a1a1a;
+    }
+
+    .preloader-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
     }
 
     .preloader-name {
@@ -281,15 +285,19 @@
       width: 50px;
       height: 50px;
       border-radius: 12px;
-      background: var(--bronze-gradient);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: #0c0c0c;
+      background: #1a1a1a;
       transition: transform 0.3s ease;
+    }
+
+    .logo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
     }
 
     .logo-container:hover .logo-img {
@@ -460,15 +468,19 @@
       border-radius: 30px;
       margin: 0 auto 1.5rem;
       animation: float 4s ease-in-out infinite;
-      background: var(--bronze-gradient);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 3rem;
-      font-weight: 700;
-      color: #0c0c0c;
+      background: #1a1a1a;
       box-shadow: 0 0 50px rgba(205, 127, 50, 0.25);
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
     }
 
     .hero-badge {
@@ -774,14 +786,18 @@
       height: 70px;
       border-radius: 18px;
       margin: 0 auto 1rem;
-      background: var(--bronze-gradient);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #0c0c0c;
+      background: #1a1a1a;
+    }
+
+    .footer-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
     }
 
     .footer-name {
@@ -864,8 +880,8 @@
     }
 
     @media (max-width: 480px) {
-      .hero-logo { width: 110px; height: 110px; font-size: 2rem; }
-      .preloader-logo { width: 110px; height: 110px; font-size: 1.8rem; }
+      .hero-logo { width: 110px; height: 110px; }
+      .preloader-logo { width: 110px; height: 110px; }
       .section-padding { padding: 3rem 0; }
       .logo-name { font-size: 1.2rem; }
     }
@@ -875,7 +891,9 @@
 
   <!-- PRELOADER -->
   <div id="preloader" aria-label="Loading Lavish Men's Salon">
-    <div class="preloader-logo">L</div>
+    <div class="preloader-logo">
+      <img src="logo.png" alt="Lavish Men's Salon Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:var(--font-heading);font-size:3rem;font-weight:700;color:#cd7f32;\'>L</span>';">
+    </div>
     <div class="preloader-name">Lavish Men's Salon</div>
     <div class="loading-bar"><div class="loading-bar-fill"></div></div>
   </div>
@@ -884,7 +902,9 @@
   <header class="header" id="header">
     <div class="container header-inner">
       <div class="logo-container">
-        <div class="logo-img">L</div>
+        <div class="logo-img">
+          <img src="logo.png" alt="Lavish Men's Salon Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:var(--font-heading);font-size:1.2rem;font-weight:700;color:#cd7f32;\'>L</span>';">
+        </div>
         <div class="logo-text">
           <span class="logo-name">Lavish Men's Salon</span>
           <span class="logo-sub">Grooming & Style</span>
@@ -921,7 +941,9 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="container">
-      <div class="hero-logo">L</div>
+      <div class="hero-logo">
+        <img src="logo.png" alt="Lavish Men's Salon Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:var(--font-heading);font-size:3rem;font-weight:700;color:#cd7f32;\'>L</span>';">
+      </div>
       <div class="hero-badge">📍 7 Branches Across Karachi</div>
       <h1 class="bronze-text">Lavish Men's Salon</h1>
       <p class="hero-sub">Premium Grooming & Style</p>
@@ -1192,7 +1214,9 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo">L</div>
+      <div class="footer-logo">
+        <img src="logo.png" alt="Lavish Men's Salon Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:var(--font-heading);font-size:2rem;font-weight:700;color:#cd7f32;\'>L</span>';">
+      </div>
       <div class="footer-name bronze-text">Lavish Men's Salon</div>
       <div class="social-icons">
         <a href="https://wa.me/923323238540" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">
