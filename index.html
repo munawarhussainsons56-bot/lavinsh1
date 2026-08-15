@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Lavish Men's Salon – premium men's grooming in Karachi. Haircuts, beard styling, facials, manicures, pedicures, waxing, hair color & treatments across 7 branches.">
+  <title>Lavish Men's Salon | Premium Grooming in Karachi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-black: #0c0c0c;
+      --bg-dark: #121212;
+      --bg-card: #1a1a1a;
+      --bronze: #cd7f32;
+      --bronze-light: #e8a87c;
+      --bronze-dark: #8b5a2b;
+      --bronze-gradient: linear-gradient(135deg, #e8a87c 0%, #cd7f32 50%, #8b5a2b 100%);
+      --text-white: #ffffff;
+      --text-light: #cccccc;
+      --text-gray: #9e9e9e;
+      --whatsapp-green: #25D366;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Poppins', sans-serif;
+      --font-btn: 'Montserrat', sans-serif;
+      --radius-sm: 15px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+      --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --shadow-bronze: 0 8px 24px rgba(205, 127, 50, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: var(--bg-black);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin-inline: auto;
+    }
+
+    .bronze-text {
+      background: var(--bronze-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .section-padding {
+      padding: clamp(4rem, 10vw, 7rem) 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      letter-spacing: 0.03em;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .btn-bronze {
+      background: var(--bronze-gradient);
+      color: #0c0c0c;
+      box-shadow: var(--shadow-bronze);
+    }
+
+    .btn-bronze:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(205, 127, 50, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--bronze);
+      color: var(--bronze-light);
+    }
+
+    .btn-outline:hover {
+      background: rgba(205, 127, 50, 0.1);
+      border-color: var(--bronze-light);
+      box-shadow: 0 0 20px rgba(205, 127, 50, 0.3);
+      transform: translateY(-3px);
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-black);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader-logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 30px;
+      animation: pulse 1.2s ease-in-out infinite;
+      margin-bottom: 1rem;
+      background: var(--bronze-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0c0c0c;
+    }
+
+    .preloader-name {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      background: var(--bronze-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    .loading-bar {
+      width: 250px;
+      height: 3px;
+      background: #2a2a2a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .loading-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--bronze-gradient);
+      border-radius: 10px;
+      animation: loadingFill 1.4s ease forwards;
+    }
+
+    @keyframes loadingFill {
+      0% { width: 0%; }
+      60% { width: 70%; }
+      100% { width: 100%; }
+    }
+
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: var(--whatsapp-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      pointer-events: none;
+    }
+
+    .floating-whatsapp.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+      animation: bounceIn 0.6s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.15) rotate(8deg);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    .floating-whatsapp svg {
+      width: 34px;
+      height: 34px;
+      fill: #fff;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0); }
+      50% { transform: scale(1.2); }
+      70% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10000;
+      background: rgba(12, 12, 12, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(205, 127, 50, 0.2);
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(12, 12, 12, 0.92);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--bronze-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #0c0c0c;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container:hover .logo-img {
+      transform: rotate(-5deg) scale(1.05);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: var(--bronze-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-sub {
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-gray);
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-btn);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--bronze-gradient);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--bronze-light);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .whatsapp-btn-header {
+      background: var(--bronze-gradient);
+      color: #0c0c0c;
+      font-family: var(--font-btn);
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-bronze);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .whatsapp-btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(205, 127, 50, 0.4);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      z-index: 10001;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--bronze-light);
+      transition: 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(12, 12, 12, 0.98);
+      z-index: 9998;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--text-white);
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu a:hover { color: var(--bronze-light); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 6rem 0 4rem;
+      background: radial-gradient(circle at 30% 40%, rgba(205, 127, 50, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 70% 70%, rgba(205, 127, 50, 0.05) 0%, transparent 50%);
+    }
+
+    .hero-logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 30px;
+      margin: 0 auto 1.5rem;
+      animation: float 4s ease-in-out infinite;
+      background: var(--bronze-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0c0c0c;
+      box-shadow: 0 0 50px rgba(205, 127, 50, 0.25);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(205, 127, 50, 0.15);
+      border: 1px solid rgba(205, 127, 50, 0.4);
+      color: var(--bronze-light);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+      animation: pulse 2s ease-in-out infinite;
+      font-family: var(--font-btn);
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 9vw, 5rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-sub {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--text-white);
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    .hero-desc {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* Section headings */
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-heading .subtitle {
+      color: var(--text-gray);
+      font-size: 1rem;
+      max-width: 500px;
+      margin-inline: auto;
+    }
+
+    /* About / Branches */
+    .branches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .branch-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(205, 127, 50, 0.25);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .branch-card:hover {
+      border-color: var(--bronze);
+      box-shadow: 0 10px 30px rgba(205, 127, 50, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .branch-name {
+      font-size: 1.1rem;
+      color: var(--bronze-light);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+
+    .branch-address {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      margin-bottom: 0.5rem;
+    }
+
+    .branch-phone {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(205, 127, 50, 0.25);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--bronze);
+      box-shadow: 0 15px 40px rgba(205, 127, 50, 0.2);
+    }
+
+    .service-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .service-price {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--bronze-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-desc {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+
+    /* Booking */
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      transition: var(--transition);
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card:hover {
+      border-color: var(--whatsapp-green);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25);
+    }
+
+    .contact-card:hover .contact-arrow { transform: translateX(8px); }
+
+    .whatsapp-icon-circle {
+      width: 55px;
+      height: 55px;
+      background: var(--whatsapp-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-icon-circle svg { width: 30px; height: 30px; fill: #fff; }
+
+    .contact-info { flex-grow: 1; }
+    .contact-info .label { font-size: 0.8rem; color: var(--text-gray); letter-spacing: 1px; }
+    .contact-info .phone { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--text-white); }
+    .contact-arrow { font-size: 1.8rem; color: var(--bronze); transition: transform 0.3s ease; }
+
+    .email-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(205, 127, 50, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .email-icon-circle {
+      width: 45px;
+      height: 45px;
+      background: var(--bronze-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.5rem;
+    }
+
+    .booking-form {
+      background: var(--bg-card);
+      border: 1px solid rgba(205, 127, 50, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+
+    .booking-form h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-family: var(--font-btn);
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1.2rem;
+      background: #0c0c0c;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      color: var(--text-white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      outline: none;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--bronze);
+      box-shadow: 0 0 15px rgba(205, 127, 50, 0.15);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 80px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--bronze-gradient);
+      color: #0c0c0c;
+      font-family: var(--font-btn);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-bronze);
+      letter-spacing: 0.5px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(205, 127, 50, 0.4);
+    }
+
+    /* Footer */
+    .footer {
+      background: #050505;
+      border-top: 1px solid rgba(205, 127, 50, 0.15);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      margin: 0 auto 1rem;
+      background: var(--bronze-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0c0c0c;
+    }
+
+    .footer-name {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      background: #1a1a1a;
+      border: 1px solid rgba(205, 127, 50, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: var(--bronze-light);
+    }
+
+    .social-icon:hover {
+      background: var(--bronze-gradient);
+      color: #0c0c0c;
+      border-color: transparent;
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-bronze);
+    }
+
+    .social-icon svg { width: 20px; height: 20px; fill: currentColor; }
+
+    .footer-contact { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .copyright { color: #555; font-size: 0.8rem; }
+
+    /* Scroll animations */
+    .scroll-animate, .scroll-animate-left, .scroll-animate-right {
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      will-change: opacity, transform;
+    }
+
+    .scroll-animate { transform: translateY(40px); }
+    .scroll-animate-left { transform: translateX(-40px); }
+    .scroll-animate-right { transform: translateX(40px); }
+
+    .scroll-animate.visible, .scroll-animate-left.visible, .scroll-animate-right.visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @media (max-width: 1024px) {
+      .booking-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-desktop { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+      .hero h1 { font-size: 2.8rem; }
+      .booking-form { padding: 1.5rem; }
+      .contact-card { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-logo { width: 110px; height: 110px; font-size: 2rem; }
+      .preloader-logo { width: 110px; height: 110px; font-size: 1.8rem; }
+      .section-padding { padding: 3rem 0; }
+      .logo-name { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader" aria-label="Loading Lavish Men's Salon">
+    <div class="preloader-logo">L</div>
+    <div class="preloader-name">Lavish Men's Salon</div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <div class="logo-img">L</div>
+        <div class="logo-text">
+          <span class="logo-name">Lavish Men's Salon</span>
+          <span class="logo-sub">Grooming & Style</span>
+        </div>
+      </div>
+
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#branches">Branches</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#booking">Book Now</a></li>
+        </ul>
+        <a href="https://wa.me/923323238540" target="_blank" rel="noopener" class="whatsapp-btn-header" aria-label="WhatsApp us">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.86.51 3.6 1.4 5.1L2 22l5-1.4c1.5.89 3.24 1.4 5 1.4 5.52 0 10-4.48 10-10S17.52 2 12 2zm5.4 14.6c-.23.65-1.35 1.26-1.88 1.34-.48.07-1.08.1-1.75-.11-.41-.13-.94-.31-1.62-.61-2.85-1.23-4.71-4.11-4.85-4.3-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.26-.29.57-.36.76-.36s.38.01.55.01c.18.01.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.32.38-.46.51-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.16 1.37 2.47 1.52.31.15.49.13.67-.08.18-.21.77-.9.97-1.21.2-.31.41-.26.69-.15.28.1 1.78.84 2.09.99.31.15.51.23.59.36.08.13.08.72-.15 1.36z"/></svg>
+          WhatsApp
+        </a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#branches">Branches</a>
+      <a href="#services">Services</a>
+      <a href="#booking">Book Now</a>
+      <a href="https://wa.me/923323238540" target="_blank" rel="noopener" style="color: var(--bronze-light);">WhatsApp Us</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-logo">L</div>
+      <div class="hero-badge">📍 7 Branches Across Karachi</div>
+      <h1 class="bronze-text">Lavish Men's Salon</h1>
+      <p class="hero-sub">Premium Grooming & Style</p>
+      <p class="hero-desc">A modern grooming destination designed for men who value style, confidence, and self-care. Expert haircuts, beard styling, facials, and treatments — delivered by professional stylists.</p>
+      <div class="hero-buttons">
+        <a href="#booking" class="btn btn-bronze">Book Appointment</a>
+        <a href="https://wa.me/923323238540" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section class="section-padding" id="branches" style="background: var(--bg-dark);">
+    <div class="container">
+      <div class="section-heading scroll-animate">
+        <h2>Our <span class="bronze-text">Branches</span></h2>
+        <p class="subtitle">Seven convenient locations across Karachi</p>
+      </div>
+
+      <div class="branches-grid">
+        <div class="branch-card scroll-animate" style="transition-delay:0.05s;">
+          <div class="branch-name">Mosmiyat</div>
+          <div class="branch-address">A-5, Near Kamran Chowranghi, Opp Haseol Pump, Block 4, Johar</div>
+          <div class="branch-phone">📞 0336-4440061</div>
+        </div>
+        <div class="branch-card scroll-animate" style="transition-delay:0.1s;">
+          <div class="branch-name">DHA</div>
+          <div class="branch-address">Shop No.1, Building 23-C, Rahat Commercial Lane 3, DHA Phase 6</div>
+          <div class="branch-phone">📞 0336-5244452</div>
+        </div>
+        <div class="branch-card scroll-animate" style="transition-delay:0.15s;">
+          <div class="branch-name">Korangi</div>
+          <div class="branch-address">House # 9, Sec 35-D, Opp Memon Institute, Korangi No. 5</div>
+          <div class="branch-phone">📞 0336-4440120</div>
+        </div>
+        <div class="branch-card scroll-animate" style="transition-delay:0.2s;">
+          <div class="branch-name">Gulshan</div>
+          <div class="branch-address">C-26, Near Eastern Bakers, Rashid Minhas Road, Gulshan Blk 10-A, Aladin Park</div>
+          <div class="branch-phone">📞 0336-2777424</div>
+        </div>
+        <div class="branch-card scroll-animate" style="transition-delay:0.25s;">
+          <div class="branch-name">North Nazimabad</div>
+          <div class="branch-address">B-184, Block L, Near Karachi Dental College</div>
+          <div class="branch-phone">📞 0336-4440083</div>
+        </div>
+        <div class="branch-card scroll-animate" style="transition-delay:0.3s;">
+          <div class="branch-name">Gulshan-e-Maymar</div>
+          <div class="branch-address">A-9, Sub Sector U2, Sector U, Near Reflection Lawn</div>
+          <div class="branch-phone">📞 0332-4441278</div>
+        </div>
+        <div class="branch-card scroll-animate" style="transition-delay:0.35s;">
+          <div class="branch-name">Malir Halt</div>
+          <div class="branch-address">259, Opp Printing Press, Near Bank Al Habib</div>
+          <div class="branch-phone">📞 0336-3155531</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section-padding" id="services">
+    <div class="container">
+      <div class="section-heading scroll-animate">
+        <h2>Our <span class="bronze-text">Services</span></h2>
+        <p class="subtitle">Comprehensive grooming for the modern gentleman</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card scroll-animate" style="transition-delay:0.05s;">
+          <div class="service-icon">💇‍♂️</div>
+          <h3>Expert Haircut</h3>
+          <div class="service-price">PKR 1,000</div>
+          <p class="service-desc">Precision cut by senior stylists</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.1s;">
+          <div class="service-icon">💈</div>
+          <h3>Professional Haircut</h3>
+          <div class="service-price">PKR 600</div>
+          <p class="service-desc">Classic cut and finish</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.15s;">
+          <div class="service-icon">✂️</div>
+          <h3>Designer / Fades</h3>
+          <div class="service-price">PKR 750</div>
+          <p class="service-desc">Modern fades and designer cuts</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.2s;">
+          <div class="service-icon">👶</div>
+          <h3>Baby Haircut</h3>
+          <div class="service-price">PKR 500</div>
+          <p class="service-desc">Gentle cut for little ones</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.25s;">
+          <div class="service-icon">🧔</div>
+          <h3>Stylish Beard</h3>
+          <div class="service-price">PKR 300</div>
+          <p class="service-desc">Beard shaping and styling</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.3s;">
+          <div class="service-icon">🪒</div>
+          <h3>Expert Beard / Shave</h3>
+          <div class="service-price">PKR 500</div>
+          <p class="service-desc">Traditional hot towel shave</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.35s;">
+          <div class="service-icon">🧖‍♂️</div>
+          <h3>Derma Clear Facial</h3>
+          <div class="service-price">PKR 5,000</div>
+          <p class="service-desc">Deep cleansing facial</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.4s;">
+          <div class="service-icon">✨</div>
+          <h3>Janssen Facial</h3>
+          <div class="service-price">PKR 7,500</div>
+          <p class="service-desc">Premium European brand facial</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.45s;">
+          <div class="service-icon">💅</div>
+          <h3>Manicure</h3>
+          <div class="service-price">PKR 500</div>
+          <p class="service-desc">Clean, healthy nails</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.5s;">
+          <div class="service-icon">🦶</div>
+          <h3>Pedicure</h3>
+          <div class="service-price">PKR 500</div>
+          <p class="service-desc">Relaxing foot care</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.55s;">
+          <div class="service-icon">🎨</div>
+          <h3>Eazi Color</h3>
+          <div class="service-price">PKR 1,500</div>
+          <p class="service-desc">Full hair color</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.6s;">
+          <div class="service-icon">🕯️</div>
+          <h3>Full Body Wax</h3>
+          <div class="service-price">PKR 3,000</div>
+          <p class="service-desc">Complete body waxing</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.65s;">
+          <div class="service-icon">💆‍♂️</div>
+          <h3>Keratin Treatment</h3>
+          <div class="service-price">PKR 700+</div>
+          <p class="service-desc">Smooth, frizz-free hair</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.7s;">
+          <div class="service-icon">🧴</div>
+          <h3>Anti-Dandruff Treatment</h3>
+          <div class="service-price">PKR 3,000</div>
+          <p class="service-desc">Galvanic scalp treatment</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.75s;">
+          <div class="service-icon">💇</div>
+          <h3>Professional Styling</h3>
+          <div class="service-price">PKR 500</div>
+          <p class="service-desc">Blow dry & styling</p>
+        </div>
+        <div class="service-card scroll-animate" style="transition-delay:0.8s;">
+          <div class="service-icon">🧖</div>
+          <h3>Korean Skin Care</h3>
+          <div class="service-price">PKR 25,000</div>
+          <p class="service-desc">Advanced Korean facial</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section-padding" id="booking" style="background: var(--bg-dark);">
+    <div class="container">
+      <div class="booking-grid">
+        <!-- Left: Contact -->
+        <div class="scroll-animate-left">
+          <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1.5rem;">Contact <span class="bronze-text">Us</span></h2>
+
+          <a href="https://wa.me/923323238540" target="_blank" rel="noopener" class="contact-card" aria-label="Contact via WhatsApp">
+            <div class="whatsapp-icon-circle">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.86.51 3.6 1.4 5.1L2 22l5-1.4c1.5.89 3.24 1.4 5 1.4 5.52 0 10-4.48 10-10S17.52 2 12 2zm5.4 14.6c-.23.65-1.35 1.26-1.88 1.34-.48.07-1.08.1-1.75-.11-.41-.13-.94-.31-1.62-.61-2.85-1.23-4.71-4.11-4.85-4.3-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.26-.29.57-.36.76-.36s.38.01.55.01c.18.01.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.32.38-.46.51-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.16 1.37 2.47 1.52.31.15.49.13.67-.08.18-.21.77-.9.97-1.21.2-.31.41-.26.69-.15.28.1 1.78.84 2.09.99.31.15.51.23.59.36.08.13.08.72-.15 1.36z"/></svg>
+            </div>
+            <div class="contact-info">
+              <div class="label">WhatsApp Business</div>
+              <div class="phone">0332-3238540</div>
+            </div>
+            <span class="contact-arrow">→</span>
+          </a>
+
+          <a href="mailto:Info@LavishSaloon.Com.Pk" class="email-card" style="display: flex; align-items:center; gap:1.5rem; text-decoration:none;">
+            <div class="email-icon-circle">✉️</div>
+            <div class="contact-info">
+              <div class="label">Email</div>
+              <div class="phone" style="font-size:1rem;">Info@LavishSaloon.Com.Pk</div>
+            </div>
+          </a>
+
+          <p style="color: var(--text-gray); margin-top: 1.5rem; font-size: 0.9rem;">🕐 Open Daily: 11:00 AM – 11:00 PM (Fri-Sat) | 11:00 AM – 10:30 PM (Sun-Thu)</p>
+        </div>
+
+        <!-- Right: Booking Form -->
+        <div class="scroll-animate-right">
+          <form class="booking-form" id="bookingForm" novalidate>
+            <h3>Book Your <span class="bronze-text">Appointment</span></h3>
+
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="03XX XXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+              <label for="branch">Branch</label>
+              <select id="branch" name="branch" required>
+                <option value="" disabled selected>Select branch</option>
+                <option>Mosmiyat</option>
+                <option>DHA</option>
+                <option>Korangi</option>
+                <option>Gulshan</option>
+                <option>North Nazimabad</option>
+                <option>Gulshan-e-Maymar</option>
+                <option>Malir Halt</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select service</option>
+                <option>Expert Haircut</option>
+                <option>Professional Haircut</option>
+                <option>Designer / Fades Haircut</option>
+                <option>Baby Haircut</option>
+                <option>Stylish Beard</option>
+                <option>Expert Beard / Shave</option>
+                <option>Derma Clear Facial</option>
+                <option>Janssen Facial</option>
+                <option>Manicure</option>
+                <option>Pedicure</option>
+                <option>Eazi Color</option>
+                <option>Full Body Wax</option>
+                <option>Keratin Treatment</option>
+                <option>Anti-Dandruff Treatment</option>
+                <option>Professional Styling</option>
+                <option>Korean Skin Care</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Confirm Booking via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">L</div>
+      <div class="footer-name bronze-text">Lavish Men's Salon</div>
+      <div class="social-icons">
+        <a href="https://wa.me/923323238540" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.86.51 3.6 1.4 5.1L2 22l5-1.4c1.5.89 3.24 1.4 5 1.4 5.52 0 10-4.48 10-10S17.52 2 12 2zm5.4 14.6c-.23.65-1.35 1.26-1.88 1.34-.48.07-1.08.1-1.75-.11-.41-.13-.94-.31-1.62-.61-2.85-1.23-4.71-4.11-4.85-4.3-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.26-.29.57-.36.76-.36s.38.01.55.01c.18.01.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.32.38-.46.51-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.16 1.37 2.47 1.52.31.15.49.13.67-.08.18-.21.77-.9.97-1.21.2-.31.41-.26.69-.15.28.1 1.78.84 2.09.99.31.15.51.23.59.36.08.13.08.72-.15 1.36z"/></svg>
+        </a>
+        <a href="https://facebook.com/lavishmensalon" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+        </a>
+        <a href="https://instagram.com/lavishmensalon" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 2.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.5-1.2.9-.4.4-.7.8-.9 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.5.9.9 1.2.4.4.8.7 1.2.9.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.5 1.2-.9.4-.4.7-.8.9-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.5-.9-.9-1.2-.4-.4-.8-.7-1.2-.9-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2.2a3.3 3.3 0 100 6.6 3.3 3.3 0 000-6.6zm5.8-3.2a1.3 1.3 0 11-2.6 0 1.3 1.3 0 012.6 0z"/></svg>
+        </a>
+      </div>
+      <div class="footer-contact">📞 0332-3238540 | ✉️ Info@LavishSaloon.Com.Pk | 📍 7 Branches in Karachi</div>
+      <p class="copyright">© 2025 Lavish Men's Salon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/923323238540" target="_blank" rel="noopener" class="floating-whatsapp" id="floatingWhatsapp" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.86.51 3.6 1.4 5.1L2 22l5-1.4c1.5.89 3.24 1.4 5 1.4 5.52 0 10-4.48 10-10S17.52 2 12 2zm5.4 14.6c-.23.65-1.35 1.26-1.88 1.34-.48.07-1.08.1-1.75-.11-.41-.13-.94-.31-1.62-.61-2.85-1.23-4.71-4.11-4.85-4.3-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.26-.29.57-.36.76-.36s.38.01.55.01c.18.01.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.32.38-.46.51-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.16 1.37 2.47 1.52.31.15.49.13.67-.08.18-.21.77-.9.97-1.21.2-.31.41-.26.69-.15.28.1 1.78.84 2.09.99.31.15.51.23.59.36.08.13.08.72-.15 1.36z"/></svg>
+  </a>
+
+  <script>
+    (function() {
+      const preloader = document.getElementById('preloader');
+      function hidePreloader() {
+        setTimeout(() => { preloader.classList.add('hidden'); }, 1500);
+      }
+      window.addEventListener('load', hidePreloader);
+      if (document.readyState === 'complete') { hidePreloader(); } else { setTimeout(hidePreloader, 2000); }
+
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+      });
+
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      const animateElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+      animateElements.forEach(el => observer.observe(el));
+
+      const bookingSection = document.getElementById('booking');
+      const floatingWhatsapp = document.getElementById('floatingWhatsapp');
+      const whatsappObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { floatingWhatsapp.classList.add('visible'); } else { floatingWhatsapp.classList.remove('visible'); }
+        });
+      }, { threshold: 0.1 });
+      whatsappObserver.observe(bookingSection);
+
+      const dateInput = document.getElementById('date');
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      dateInput.setAttribute('min', `${year}-${month}-${day}`);
+
+      const bookingForm = document.getElementById('bookingForm');
+      bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const branch = document.getElementById('branch').value;
+        const service = document.getElementById('service').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+
+        let formattedDate = date;
+        if (date) {
+          const d = new Date(date + 'T00:00:00');
+          const options = { year: 'numeric', month: 'long', day: 'numeric' };
+          formattedDate = d.toLocaleDateString('en-PK', options);
+        }
+
+        let formattedTime = time;
+        if (time) {
+          try {
+            const [hours, minutes] = time.split(':');
+            const hourNum = parseInt(hours, 10);
+            const ampm = hourNum >= 12 ? 'PM' : 'AM';
+            const hour12 = hourNum % 12 || 12;
+            formattedTime = `${hour12}:${minutes} ${ampm}`;
+          } catch (err) { formattedTime = time; }
+        }
+
+        const message = `🪒 *NEW BOOKING REQUEST - LAVISH MEN'S SALON*%0A%0A👤 *Name:* ${encodeURIComponent(name)}%0A📞 *Phone:* ${encodeURIComponent(phone)}%0A📍 *Branch:* ${encodeURIComponent(branch)}%0A💈 *Service:* ${encodeURIComponent(service)}%0A📅 *Date:* ${encodeURIComponent(formattedDate)}%0A⏰ *Time:* ${encodeURIComponent(formattedTime)}`;
+        window.open(`https://wa.me/923323238540?text=${message}`, '_blank');
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            const headerHeight = header.offsetHeight || 70;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
